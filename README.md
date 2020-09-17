@@ -5,37 +5,36 @@
 [![asciicast](https://asciinema.org/a/289717.svg)](https://asciinema.org/a/289717)
 
 
-## 主要功能
+## Основная функция
 
-- :smiling_imp:单url漏洞扫描
+- :smiling_imp:Сканирование уязвимостей одного URL
 
-  支持SQL注入, XSS, 命令执行,文件包含, ssrf
+  Поддержка SQL-инъекций, XSS, выполнения команд, включения файлов, ssrf
 
-  进行单站点漏洞扫描
+  Выполните сканирование уязвимостей одного сайта
 
   `python3 cerberus.py -target www.qq.com`
   
   [![asciicast](https://asciinema.org/a/6fOJu4DkVhMGutLeIGmwE7Ppi.svg)](https://asciinema.org/a/6fOJu4DkVhMGutLeIGmwE7Ppi)
   
-- :cherry_blossom: 线程设置
+- :cherry_blossom: Настройки детализации
 
-  多线程，默认7线程
+  Многопоточный, по умолчанию 7 потоков
   
   `python3 cerberus.py -target www.qq.com -thread 7`
 
 
-- :imp:子域名异步批量扫描
+- :imp:Асинхронное пакетное сканирование поддоменов
 
-  使用aioDNS，asyncio异步，子域名爆破后，加入扫描队列，覆盖目标全方位资产进行批量漏洞扫描
-
+  Используйте aioDNS, asyncio asynchronous, после взлома субдомена присоединитесь к очереди сканирования, чтобы охватить все целевые ресурсы для пакетного сканирования уязвимостей:
   `python3 cerberus.py -target www.qq.com -subdomain`
   
   [![asciicast](https://asciinema.org/a/n8zwz58eOkqH8JNZAi85opa61.svg)](https://asciinema.org/a/n8zwz58eOkqH8JNZAi85opa61)
 
 
-- :skull: 代理IP收集
+- :skull: Сбор прокси IP
 
-  爬取了9个站点的实时免费代理IP，但IP存活率较低，大概在20%左右，检测IP是否存活的过程中可能会阻塞扫描过程。
+  Просканировал бесплатные IP-адреса прокси-серверов в реальном времени 9 сайтов, но выживаемость IP-адресов низкая, около 20%. Процесс проверки того, является ли IP-адрес живым, может заблокировать процесс сканирования.
 
   - www.data5u.com
   - www.xicidaili.com
@@ -51,17 +50,17 @@
   
   [![asciicast](https://asciinema.org/a/p4A6ZhN5kCKIzlXZbdApltgNe.svg)](https://asciinema.org/a/p4A6ZhN5kCKIzlXZbdApltgNe)
   
-- :japanese_ogre:Waf信息收集
+- :japanese_ogre:Waf сбор сообщений
 
-  国内外100+款waf信息,强大的指纹库，包括安全狗，云锁，阿里云，云盾，腾讯云等，提供部分已知waf bypass 方案
+  Более 100 сведений о Waf внутри страны и за рубежом, мощная библиотека отпечатков пальцев, включая охранную собаку, облачный замок, Alibaba Cloud, Cloud Shield, Tencent Cloud и т.д. Предоставляют некоторые известные решения для обхода waf.
   
-  请务必提供带有参数的URL进行WAF测试！
+  Обязательно укажите URL-адрес с параметрами для тестирования WAF!
   
   `python3 cerberus.py -target https://open.weixin.qq.com/frame?t=home/web_tmpl&lang=zh_CN -waf`
 
-- :see_no_evil:中间件信息收集
+- :see_no_evil:Сбор информации по промежуточного слоя
 
-  信息收集完毕后，根据获取结果，自动进行中间件漏洞扫描
+  После сбора информации автоматическое сканирование на наличие уязвимостей промежуточного ПО на основе полученных результатов.
 
   - WAF
   
@@ -79,9 +78,9 @@
   
   [![asciicast](https://asciinema.org/a/mQ6qLc98J87Srpf7nGq8MakdP.svg)](https://asciinema.org/a/mQ6qLc98J87Srpf7nGq8MakdP)
   
-- :panda_face: 指定中间件漏洞扫描
+- :panda_face: Укажите сканирование уязвимостей промежуточного ПО.
 
-  如果已知目标部分中间件信息，可以指定类型，直接进行扫描
+  Если целевая часть информации промежуточного программного обеспечения известна, вы можете указать тип и сканировать напрямую ->
   
   - Thinkphp CVE-2018-5955
   
@@ -99,19 +98,19 @@
   
   
   
-- :trollface: 输入文件批量扫描
+- :trollface: Пакетное сканирование входных файлов
 
-  - 文件路径需为绝对路径
+  - Путь к файлу должен быть абсолютным.
   
-  - 需为txt文本格式，确保每一行只有一个域名
+  - Должен быть в формате txt, убедитесь, что в каждой строке указано только одно доменное имя.
   
   `python3 cerberus.py -file absolute path`
 
-- :cookie: 设置Cookie
+- :cookie: Настройка cookie
   
   `python3 cerberus.py -cookie cookie`
 
-- :speak_no_evil: 输出漏洞扫描报告
+- :speak_no_evil: Вывод отчета о сканировании уязвимостей
 
   `python3 cerberus.py -outfile`
   
@@ -119,13 +118,13 @@
 
 ## :rabbit: Praise me!
 
-   - :kissing_cat: 如果您认为本项目对您有一定帮助，为了更好的开源安全工具！请赞赏我！感谢您的赞赏！
+   - :kissing_cat: Если вы думаете, что этот проект полезен для вас, для улучшения инструментов безопасности с открытым исходным кодом! Пожалуйста, оцените меня! Спасибо за благодарность!
 
    ![praise](https://github.com/YagamiiLight/Cerberus/blob/master/images/praise.jpg)
 
-## 声明
+## Заявление
 
-本项目仅供学习交流，使用本工具所造成的任何违法后果，与本人无关！！
+Этот проект предназначен только для обучения и общения, любые незаконные последствия, вызванные использованием этого инструмента, не имеют ко мне никакого отношения! 
 
 
   
